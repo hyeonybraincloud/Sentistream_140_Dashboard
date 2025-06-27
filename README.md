@@ -81,7 +81,7 @@ with open('tokenizer.json','w') as f:
 
 - 혼돈행렬, 분류 리포트 출력
 
-# 4. Streamlit 대시보드(`app.pt`)
+# 4. Streamlit 대시보드(`app.py`)
 - 사이드바 컨트롤
 
   - Positive Threshold 슬라이더
@@ -93,3 +93,11 @@ with open('tokenizer.json','w') as f:
 - 시각화: 혼돈행렬, ROC Curve, TF-IDF 상위 단어 바 차트, WordCloud
 
 - 입력 텍스트 실시간 감성 예측 기능 (LR 및 LSTM 모두 지원)
+
+# 5. 요구 사항
+- Python 3.8 이상
+
+- 필수 라이브러리: `pandas`, `scikit-learn`, `nltk`, `tensorflow`, `streamlit`, `emoji`, `wordcloud`
+
+# 6. 성능
+![image](https://github.com/user-attachments/assets/dd2f3226-9b4f-47fc-86de-2c1a821fa586)
