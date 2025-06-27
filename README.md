@@ -21,3 +21,28 @@
 - 공백 기준 토큰화 → 불용어 제거 → 표제어 추출
 
 - 최종 처리된 토큰을 공백으로 결합하여 반환 
+
+# 2. TF-IDF + Logistic Regression 버전
+① 벡터화
+```python
+vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1,2))
+X_tfidf = vectorizer.fit_transform(df['processed'])
+```
+
+② 모델 학습
+```python
+lr = LogisticRegression(max_iter=1000, solver='liblinear')
+grid = GridSearchCV(lr, {'C':[0.01,0.1,1,10]}, cv=5, scoring='f1')
+grid.fit(X_tfidf, y)
+best_model = grid.best_estimator_
+```
+하이퍼파라미터 `C` 최적값 및 F1 스코어를 출력하며, 최적 모델을 저장한다.
+
+③ 평가 및 시각화
+- 혼돈행렬(`confusion_matrix`), 분류 리포트(`classification_report`) 출력
+
+- ROC 커브 및 AUC 계산
+
+- WordCloud, 상위 N-그램 TF-IDF 막대 그래프 생성
+
+- 결과 파일: `df.csv`, `vectorizer.pkl`, `model.pkl` 생성
