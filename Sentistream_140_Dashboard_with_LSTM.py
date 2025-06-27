@@ -248,7 +248,7 @@ print("✅ LSTM 모델을 'lstm_model.h5'로 저장했습니다.")
 # EOF
 
 !pip install --quiet pyngrok
-!ngrok authtoken 2yzg6wRvAmJyCgSnoEQUjJMRKtA_3rVWf7k79ubJKKgRr8uxZ
+!ngrok authtoken (secret)
 
 # 1) streamlit 설치 (필요 시)
 !pip install --quiet streamlit
